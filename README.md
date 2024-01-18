@@ -1,4 +1,8 @@
 # ElectroHolidayMyTask
+![1_title](https://github.com/Iketerumanato/ElectroHolidayMyTask/assets/74332407/7ede7829-ff2e-4db7-bdd5-a19523806af7)
+
+![3_seesaw](https://github.com/Iketerumanato/ElectroHolidayMyTask/assets/74332407/a480f7e4-e57b-4b3f-b3f8-b58b1a88a510)
+
 <担当した箇所>
 
 <システム>
