@@ -10,57 +10,57 @@
 
 (サウンド)
 
-・SE再生処理をまとめたもの(SEManager.cs)
+・SE再生処理をまとめたもの(SEManager.cs/System)
 
 ・BGM再生と切り替えの仕組み(BGMManager.cs/System)
 
 (UI)
 
-・キャラクターの会話イベントの仕組み(TalkArea.cs)
+・キャラクターの会話イベントの仕組み(TalkArea.cs/System)
 
 ・画面のフェードイン,フェードアウトを行う仕組み(CallFadeInOut.cs/System)
 
-・表示されたUIを閉じるための円ゲージを増加させる仕組み(SircleGage.cs)
+・表示されたUIを閉じるための円ゲージを増加させる仕組み(SircleGage.cs/UI)
 
-・ムービーのスキップ機能(MovieSkipGage.cs)
+・ムービーのスキップ機能(MovieSkipGage.cs/UI)
 
-・メニューの表示(PoseMenu.cs)※ボツ
+・メニューの表示(PoseMenu.cs/UI)
 
-・メニューの各種ボタンの機能(ゲームに戻る、タイトルに戻る、リトライ)(PoseMenu.cs)
+・メニューの各種ボタンの機能(ゲームに戻る、タイトルに戻る、リトライ)(PoseMenu.cs/UI)
 
-・タイトル画面に戻るかの確認画面(PoseMenu.cs)
+・タイトル画面に戻るかの確認画面(PoseMenu.cs/UI)
 
-・チュートリアルなどのUI表示、非表示を行う仕組み(TutorialZone.cs)
+・チュートリアルなどのUI表示、非表示を行う仕組み(TutorialZone.cs/UI)
 
-・チュートリアルムービー再生と切り替えの仕組み(TutorialVideo.cs)
+・チュートリアルムービー再生と切り替えの仕組み(TutorialVideo.cs/UI)
 
-・チュートリアル画像と切り替えの仕組み(TutorialImage.cs)
+・チュートリアル画像と切り替えの仕組み(TutorialImage.cs/UI)
 
 ・各シーンのフェードインフェードアウトの仕組み
 
 <システムの中で使われなくなったもの>
 
-・ボスのフェーズ管理の仕組み(BossPhaseSystem.cs)※ボツ
+・ボスのフェーズ管理の仕組み(BossPhaseSystem.cs/Chara)※ボツ
 
-・ボスのフェーズ管理のためのインターフェース(IBossPhase.cs)※ボツ
+・ボスのフェーズ管理のためのインターフェース(IBossPhase.cs/Chara)※ボツ
 
-・ボスのフェーズ01で行う処理(BossPhase01.cs)※ボツ
+・ボスのフェーズ01で行う処理(BossPhase01.cs/Chara)※ボツ
 
-・ボスのフェーズ02で行う処理(BossPhase02.cs)※ボツ
+・ボスのフェーズ02で行う処理(BossPhase02.cs/Chara)※ボツ
 
-・ボスのフェーズ03で行う処理(BossPhase03.cs)※ボツ
+・ボスのフェーズ03で行う処理(BossPhase03.cs/Chara)※ボツ
 
 <ギミック>
 
 ・振り子のギミック作成(unity内の機能のみで作成)
 
-・振り子を吊るす線の描画処理(FurikoRenderer.cs)
+・振り子を吊るす線の描画処理(FurikoRenderer.cs/Gimmick)
 
-・最終ステージのレバー(Lever.cs)
+・最終ステージのレバー(Lever.cs/Gimmick)
 
 <キャラ>
 
-・アンドロイドの操作管理プログラム(AndroidController.cs)
+・アンドロイドの操作管理プログラム(AndroidController.cs/Chara)
 
 ・アンドロイドの操作(DenkiActions)作成(PlayerMap.png/Other)
 
@@ -74,9 +74,9 @@
 
 ・タイトル画面構成(Title.png/Other)
 
-・ポーズメニュー画面構成(Menu01.png/Other,Menu02.png/Other)
+・ポーズメニュー画面構成(Menu01.png/Other, Menu02.png/Other)
 
-・チュートリアル画面構成(Tutorial01.png,Tutorial02.png,Tutorial03.png/Other)
+・チュートリアル画面構成(Tutorial01.png/Other, Tutorial02.png/Other, Tutorial03.png/Other)
 
 <ビルドデータ>
 EH1313day2.zip
