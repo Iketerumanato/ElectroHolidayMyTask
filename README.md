@@ -62,21 +62,21 @@
 
 ・アンドロイドの操作管理プログラム(AndroidController.cs)
 
-・アンドロイドの操作(DenkiActions)作成(PlayerMap.png)
+・アンドロイドの操作(DenkiActions)作成(PlayerMap.png/Other)
 
-・アンドロイドのアニメーション制御(AndroidAnimation.png)
+・アンドロイドのアニメーション制御(AndroidAnimation.png/Other)
 
 ・アンドロイドのアニメーションコントローラーの作成(Android.controller)
 
-・メニュー表示のInputActionMapの作成(MenuMap.png)
+・メニュー表示のInputActionMapの作成(MenuMap.png/Other)
 
 <シーン>
 
-・タイトル画面構成(Title.png)
+・タイトル画面構成(Title.png/Other)
 
-・ポーズメニュー画面構成(Menu01.png,Menu02.png)
+・ポーズメニュー画面構成(Menu01.png/Other,Menu02.png/Other)
 
-・チュートリアル画面構成(Tutorial01.png,Tutorial02.png,Tutorial03.png)
+・チュートリアル画面構成(Tutorial01.png,Tutorial02.png,Tutorial03.png/Other)
 
 <ビルドデータ>
 EH1313day2.zip
