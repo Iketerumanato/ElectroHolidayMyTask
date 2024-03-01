@@ -85,6 +85,6 @@ EH1313day2.zip
 
 <本プロジェクトのGithubのURL>
 
-https://github.com/Iketerumanato/TakoashiHaisen.git
+[https://github.com/Iketerumanato/TakoashiHaisen.git](https://github.com/Nanachi9999/TakoashiHaisen.git)
 
 ----------------------------------------------------------------------------------------------------------------------------
