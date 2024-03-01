@@ -12,13 +12,13 @@
 
 ・SE再生処理をまとめたもの(SEManager.cs)
 
-・BGM再生と切り替えの仕組み(BGMManager.cs)
+・BGM再生と切り替えの仕組み(BGMManager.cs/System)
 
 (UI)
 
 ・キャラクターの会話イベントの仕組み(TalkArea.cs)
 
-・画面のフェードイン,フェードアウトを行う仕組み(CallFadeInOut.cs)
+・画面のフェードイン,フェードアウトを行う仕組み(CallFadeInOut.cs/System)
 
 ・表示されたUIを閉じるための円ゲージを増加させる仕組み(SircleGage.cs)
 
