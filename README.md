@@ -78,6 +78,9 @@
 
 ・チュートリアル画面構成(Tutorial01.png/Other, Tutorial02.png/Other, Tutorial03.png/Other)
 
+<シェーダー>
+・オブジェクトに付ける点滅するオブジェクトのシェーダー()
+
 <ビルドデータ>
 
 EH1313day2.zip※本作品はUnityのver2021.3.23f1で制作しました
