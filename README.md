@@ -15,6 +15,7 @@
 [SEManager.cs](System/SEManager.cs)
 
 ・BGM再生と切り替えの仕組み
+
 [BGMManager.cs](System/BGMManager.cs)
 
 (UI)
