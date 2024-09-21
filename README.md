@@ -10,73 +10,130 @@
 
 (サウンド)
 
-・SE再生処理をまとめたもの(SEManager.cs/System)
+・SE再生処理をまとめたもの
 
-・BGM再生と切り替えの仕組み(BGMManager.cs/System)
+[SEManager.cs](System/SEManager.cs)
+
+・BGM再生と切り替えの仕組み
+[BGMManager.cs](System/BGMManager.cs)
 
 (UI)
 
-・キャラクターの会話イベントの仕組み(TalkArea.cs/System)
+・キャラクターの会話イベントの仕組み
 
-・画面のフェードイン,フェードアウトを行う仕組み(CallFadeInOut.cs/System)
+[TalkArea.cs](System/TalkArea.cs)
 
-・表示されたUIを閉じるための円ゲージを増加させる仕組み(SircleGage.cs/UI)
+・画面のフェードイン,フェードアウトを行う仕組み
 
-・ムービーのスキップ機能(MovieSkipGage.cs/UI)
+[CallFadeInOut.cs](System/CallFadeInOut.cs)
+
+・表示されたUIを閉じるための円ゲージを増加させる仕組み
+
+[SircleGage.cs](UI/SircleGage.cs)
+
+・ムービーのスキップ機能
+
+[MovieSkipGage.cs](UI/MovieSkipGage.cs)
 
 ・メニューの表示(PoseMenu.cs/UI)
 
-・メニューの各種ボタンの機能(ゲームに戻る、タイトルに戻る、リトライ)(PoseMenu.cs/UI)
+[PoseMenu.cs](UI/PoseMenu.cs)
 
-・タイトル画面に戻るかの確認画面(PoseMenu.cs/UI)
+・メニューの各種ボタンの機能(ゲームに戻る、タイトルに戻る、リトライ)(/)
 
-・チュートリアルなどのUI表示、非表示を行う仕組み(TutorialZone.cs/UI)
+[PoseMenu.cs](UI/PoseMenu.cs)
 
-・チュートリアルムービー再生と切り替えの仕組み(TutorialVideo.cs/UI)
+・タイトル画面に戻るかの確認画面
 
-・チュートリアル画像と切り替えの仕組み(TutorialImage.cs/UI)
+[PoseMenu.cs](UI/PoseMenu.cs)
+
+・チュートリアルなどのUI表示、非表示を行う仕組み
+
+[TutorialZone.cs](UI/TutorialZone.cs)
+
+・チュートリアルムービー再生と切り替えの仕組み
+
+[TutorialVideo.cs](UI/TutorialVideo.cs)
+
+・チュートリアル画像と切り替えの仕組み
+
+[TutorialImage.cs](UI/TutorialImage.cs)
 
 ・各シーンのフェードインフェードアウトの仕組み
 
 <システムの中で使われなくなったもの>
 
-・ボスのフェーズ管理の仕組み(BossPhaseSystem.cs/Chara)※ボツ
+・ボスのフェーズ管理の仕組み ※ボツ
 
-・ボスのフェーズ管理のためのインターフェース(IBossPhase.cs/Chara)※ボツ
+[BossPhaseSystem.cs](Chara/BossPhaseSystem.cs)
 
-・ボスのフェーズ01で行う処理(BossPhase01.cs/Chara)※ボツ
+・ボスのフェーズ管理のためのインターフェース ※ボツ
 
-・ボスのフェーズ02で行う処理(BossPhase02.cs/Chara)※ボツ
+[IBossPhase.cs](Chara/IBossPhase.cs)
 
-・ボスのフェーズ03で行う処理(BossPhase03.cs/Chara)※ボツ
+・ボスのフェーズ01で行う処理 ※ボツ
+
+[BossPhase01.cs](Chara/BossPhase01.cs)
+
+・ボスのフェーズ02で行う処理 ※ボツ
+
+[BossPhase02.cs](Chara/BossPhase02.cs)
+
+・ボスのフェーズ03で行う処理 ※ボツ
+
+[BossPhase03.cs](Chara/BossPhase03.cs)
 
 <ギミック>
 
 ・振り子のギミック作成(unity内の機能のみで作成)
 
-・振り子を吊るす線の描画処理(FurikoRenderer.cs/Gimmick)
+・振り子を吊るす線の描画処理
 
-・最終ステージのレバー(Lever.cs/Gimmick)
+[FurikoRenderer.cs](Gimmick/FurikoRenderer.cs)
+
+・最終ステージのレバー
+
+[Lever.cs](Gimmick/Lever.cs)
 
 <キャラ>
 
-・アンドロイドの操作管理プログラム(AndroidController.cs/Chara)
+・アンドロイドの操作管理プログラム
 
-・アンドロイドの操作(DenkiActions)作成(PlayerMap.png/Other)
+[AndroidController.cs](Chara/AndroidController.cs)
 
-・アンドロイドのアニメーション制御(AndroidAnimation.png/Other)
+・アンドロイドの操作(DenkiActions)作成
+
+[PlayerMap.png](Other/PlayerMap.png)
+
+・アンドロイドのアニメーション制御
+
+[AndroidAnimation.png](Other/AndroidAnimation.png)
 
 ・アンドロイドのアニメーションコントローラーの作成(Android.controller)
 
-・メニュー表示のInputActionMapの作成(MenuMap.png/Other)
+・メニュー表示のInputActionMapの作成
+
+[MenuMap.png](Other/MenuMap.png)
 
 <シーン>
 
-・タイトル画面構成(Title.png/Other)
+・タイトル画面構成
 
-・ポーズメニュー画面構成(Menu01.png/Other, Menu02.png/Other)
+[Title.png](Other/Title.png)
 
-・チュートリアル画面構成(Tutorial01.png/Other, Tutorial02.png/Other, Tutorial03.png/Other)
+・ポーズメニュー画面構成(Menu01.png/Other, Menu02.png/)
+
+[Menu01.png](Other/Menu01.png)
+
+[Menu02.png](Other/Menu02.png)
+
+・チュートリアル画面構成(/Other, Tutorial02.png/Other, Tutorial03.png/Other)
+
+[Tutorial01.png](Other/Tutorial01.png)
+
+[Tutorial02.png](Other/Tutorial02.png)
+
+[Tutorial02.png](Other/Tutorial03.png)
 
 <シェーダー>
 
