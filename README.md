@@ -150,8 +150,6 @@
 
 ElectroHoliday.zip※本作品はUnityのver2021.3.23f1で制作しました
 
-※イベントの二日目で展示したものをzip化してあります(ムービースキップ機能はこのビルドデータには実装されていません)
-
 <本プロジェクトのGithubのURL>
 
 [https://github.com/Iketerumanato/TakoashiHaisen.git](https://github.com/Nanachi9999/TakoashiHaisen.git)
