@@ -144,7 +144,9 @@
 
 <シェーダー>
 
-・オブジェクトに付ける点滅するオブジェクトのシェーダー(Tenmetsu.shader)
+[Tenmetsu.shader](Shader/Tenmetsu.shader)
+
+オブジェクトに付ける点滅するオブジェクトのシェーダー
 
 <ビルドデータ>
 
