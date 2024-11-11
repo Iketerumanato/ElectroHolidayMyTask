@@ -4,63 +4,52 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class AndroidController : MonoBehaviour
 {
-    //•Ï”éŒ¾
-    /// <summary>
-    /// ‚±‚ÌƒAƒ“ƒhƒƒCƒh‚ÌRigidbody‚ğæ“¾‚µ‚ÄŠi”[‚·‚éB‚±‚±‚ÉAddFroce()‚·‚é‚ÆƒLƒƒƒ‰‚ª“®‚­I
-    /// </summary>
     private Rigidbody _androidRig;
-
-    /// <summary>
-    /// ¶‰EˆÚ“®‚·‚é—ÍB’l‚ª‘å‚«‚¯‚ê‚Î‚æ‚è‹­‚­“®‚«A‰Á‘¬‚µ‚â‚·‚­‚È‚éB
-    /// </summary>
+    
     [SerializeField] private float runPower;
 
     /// <summary>
-    /// ¶‰EˆÚ“®‚Ì‘¬“xãŒÀBRigidbody‚Ì"Speed"iŒ»İ‚Ì‘¬“xj‚ª‚±‚Ì’l‚ğ’´‚¦‚È‚¢‚æ‚¤‚Éˆ—‚³‚ê‚éB
+    /// å·¦å³ç§»å‹•ã®é€Ÿåº¦ä¸Šé™ã€‚Rigidbodyã®"Speed"ï¼ˆï¼ç¾åœ¨ã®é€Ÿåº¦ï¼‰ãŒã“ã®å€¤ã‚’è¶…ãˆãªã„ã‚ˆã†ã«å‡¦ç†ã•ã‚Œã‚‹ã€‚
     /// </summary>
     [SerializeField] private float limitSpeed;
 
-    /// <summary>
-    /// ƒWƒƒƒ“ƒv—Í‚£...‚Å‚·‚©‚Ë‚¥...
-    /// </summary>
     [SerializeField] private float jumpPower;
 
     /// <summary>
-    /// Ú’n–Ê‚Ì‘å‚«‚³B’l‚ª¬‚³‚·‚¬‚é‚ÆŠRÛ‚ÅÚ’n”»’è‚ª“¾‚ç‚ê‚È‚¢‚Ì‚Å’ˆÓBƒLƒƒƒ‰‚Ì‘å‚«‚³‚É‡‚í‚¹‚Ä’²ß‚·‚é—\’èB
+    /// æ¥åœ°é¢ã®å¤§ãã•ã€‚å€¤ãŒå°ã•ã™ãã‚‹ã¨å´–éš›ã§æ¥åœ°åˆ¤å®šãŒå¾—ã‚‰ã‚Œãªã„ã®ã§æ³¨æ„ã€‚ã‚­ãƒ£ãƒ©ã®å¤§ãã•ã«åˆã‚ã›ã¦èª¿ç¯€ã™ã‚‹äºˆå®šã€‚
     /// </summary>
     [SerializeField] private float contactAreaSize;
 
     /// <summary>
-    /// ƒLƒƒƒ‰ƒNƒ^[‚Æ’n–Ê‚Ì‹——£‚ª‚±‚Ì’lˆÈ‰º‚Å‚ ‚ê‚ÎÚ’n‚µ‚Ä‚¢‚é‚Æ”»’f‚·‚éB
+    /// ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ã¨åœ°é¢ã®è·é›¢ãŒã“ã®å€¤ä»¥ä¸‹ã§ã‚ã‚Œã°æ¥åœ°ã—ã¦ã„ã‚‹ã¨åˆ¤æ–­ã™ã‚‹ã€‚
     /// </summary>
     [SerializeField] private float judgeGroundedDistance;
 
     /// <summary>
-    /// ƒAƒ“ƒhƒƒCƒh‚ğ“®‚©‚·ƒxƒƒVƒeƒBB
+    /// ã‚¢ãƒ³ãƒ‰ãƒ­ã‚¤ãƒ‰ã‚’å‹•ã‹ã™ãƒ™ãƒ­ã‚·ãƒ†ã‚£ã€‚
     /// </summary>
     private Vector2 velocity;
 
     /// <summary>
-    /// ‚±‚ÌƒAƒ“ƒhƒƒCƒh‚É“d‹C‚­‚ñ‚ª“ü‚Á‚Ä‚¢‚é‚©
+    /// ã“ã®ã‚¢ãƒ³ãƒ‰ãƒ­ã‚¤ãƒ‰ã«é›»æ°—ãã‚“ãŒå…¥ã£ã¦ã„ã‚‹ã‹
     /// </summary>
     public bool isActive = false;
 
     private void Awake()
     {
-        //©g‚ÌRigidbodyæ“¾
         _androidRig = GetComponent<Rigidbody>();
     }
 
-    //ˆÚ“®ŠÖ”B“d‹C‚­‚ñ‚©‚çŒÄ‚Ño‚·
+    //ç§»å‹•é–¢æ•°ã€‚é›»æ°—ãã‚“ã‹ã‚‰å‘¼ã³å‡ºã™
     public void Move(Vector2 vec)
     {        
-        // MoveƒAƒNƒVƒ‡ƒ“‚Ì“ü—Íæ“¾
+        // Moveã‚¢ã‚¯ã‚·ãƒ§ãƒ³ã®å…¥åŠ›å–å¾—
         velocity = vec;
     }
-    //ƒWƒƒƒ“ƒvB“d‹C‚­‚ñ‚©‚çŒÄ‚Ño‚·
+    //ã‚¸ãƒ£ãƒ³ãƒ—ã€‚é›»æ°—ãã‚“ã‹ã‚‰å‘¼ã³å‡ºã™
     public void Jump()
     {
-        // ƒWƒƒƒ“ƒv‚·‚é—Í‚ğ—^‚¦‚é
+        // ã‚¸ãƒ£ãƒ³ãƒ—ã™ã‚‹åŠ›ã‚’ä¸ãˆã‚‹
         if (CheckIsGrounded())
         {
             _androidRig.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
@@ -68,43 +57,43 @@ public class AndroidController : MonoBehaviour
         }
     }
 
-    //ForceMode.Force‚ÍFixedUpdate‚Åg‚í‚È‚¯‚ê‚Î‚È‚ç‚È‚¢(ƒ}ƒVƒ“ƒXƒyƒbƒN‚Ì‰e‹¿‚ğó‚¯‚Ä‰‰ZŒ‹‰Ê‚ª•Ï‚í‚Á‚Ä‚µ‚Ü‚¤‚½‚ß)
+    //ForceMode.Forceã¯FixedUpdateã§ä½¿ã‚ãªã‘ã‚Œã°ãªã‚‰ãªã„(ãƒã‚·ãƒ³ã‚¹ãƒšãƒƒã‚¯ã®å½±éŸ¿ã‚’å—ã‘ã¦æ¼”ç®—çµæœãŒå¤‰ã‚ã£ã¦ã—ã¾ã†ãŸã‚)
     private void FixedUpdate()
     {
-        //‹ó’†‚Å‚Í‰Á‘¬‚µ‚È‚¢
+        //ç©ºä¸­ã§ã¯åŠ é€Ÿã—ãªã„
         if (CheckIsGrounded())
         {
-            //‘¬“x§ŒÀ‰¼ƒo[ƒWƒ‡ƒ“BlimitSpeed‚ğ‰z‚¦‚Ä‚¢‚½‚çˆê’è‚Ì’l‚ÉŒÅ’è‚·‚é
+            //é€Ÿåº¦åˆ¶é™ä»®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã€‚limitSpeedã‚’è¶Šãˆã¦ã„ãŸã‚‰ä¸€å®šã®å€¤ã«å›ºå®šã™ã‚‹
             if (_androidRig.velocity.magnitude > limitSpeed)
             {
                 _androidRig.velocity = _androidRig.velocity.normalized * limitSpeed;
             }
-            //‚Å‚È‚¯‚ê‚Î‰Á‘¬‚·‚éB‚½‚¾‚µ“d‹C‚­‚ñ‚ª“ü‚Á‚Ä‚¢‚È‚¯‚ê‚Î‰Á‘¬‚µ‚È‚¢B
+            //ã§ãªã‘ã‚Œã°åŠ é€Ÿã™ã‚‹ã€‚ãŸã ã—é›»æ°—ãã‚“ãŒå…¥ã£ã¦ã„ãªã‘ã‚Œã°åŠ é€Ÿã—ãªã„ã€‚
             else if(isActive)
             {
-                // ˆÚ“®•ûŒü‚Ì—Í‚ğ—^‚¦‚é
+                // ç§»å‹•æ–¹å‘ã®åŠ›ã‚’ä¸ãˆã‚‹
                 _androidRig.AddForce(new Vector3(velocity.x, 0, velocity.y) * runPower);
             }
         }
 
-        //‰æ–ÊŠOˆ—ŠÖ”
+        //ç”»é¢å¤–å‡¦ç†é–¢æ•°
         //OffScreenAndroid();
     }
 
-    //Ú’n”»’è
+    //æ¥åœ°åˆ¤å®š
     private bool CheckIsGrounded()
     {
-        //BoxCast‚Å—v‹‚³‚ê‚éˆø”B‘«Œ³”»’è‚Ì‘å‚«‚³‚Ì”¼•ªB—v‹‚³‚ê‚é‚Ì‚ÍVector3Œ^‚È‚Ì‚Åˆø”‚Æ‚µ‚Ä“n‚·ƒ^ƒCƒ~ƒ“ƒO‚ÅVector3.one‚ÆæZ‚µ‚Äg—p
+        //BoxCastã§è¦æ±‚ã•ã‚Œã‚‹å¼•æ•°ã€‚è¶³å…ƒåˆ¤å®šã®å¤§ãã•ã®åŠåˆ†ã€‚è¦æ±‚ã•ã‚Œã‚‹ã®ã¯Vector3å‹ãªã®ã§å¼•æ•°ã¨ã—ã¦æ¸¡ã™ã‚¿ã‚¤ãƒŸãƒ³ã‚°ã§Vector3.oneã¨ä¹—ç®—ã—ã¦ä½¿ç”¨
         float halfExtents = contactAreaSize * 0.5f;
 
 
 
-        //^‰º‚ÉŒü‚©‚Á‚ÄBoxCast‚ğs‚¢AÕ“Ë‚µ‚½‚çtrueA‚µ‚È‚¯‚ê‚Îfalse‚ğ•Ô‚·
-        //ƒLƒƒƒ‰ƒNƒ^[‚Ìg’·‚ª’á‚·‚¬‚éê‡Aˆø”center‚ğY+•ûŒü‚Éˆø‚«ã‚°‚é•K—v‚ ‚èBcast‚ÌŠJn’n“_‚Éd‚È‚Á‚Ä‚¢‚éƒIƒuƒWƒFƒNƒg‚©‚ç‚ÍÚG”»’è‚ğ“¾‚ç‚ê‚È‚¢‚½‚ßB
+        //çœŸä¸‹ã«å‘ã‹ã£ã¦BoxCastã‚’è¡Œã„ã€è¡çªã—ãŸã‚‰trueã€ã—ãªã‘ã‚Œã°falseã‚’è¿”ã™
+        //ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ã®èº«é•·ãŒä½ã™ãã‚‹å ´åˆã€å¼•æ•°centerã‚’Y+æ–¹å‘ã«å¼•ãä¸Šã’ã‚‹å¿…è¦ã‚ã‚Šã€‚castã®é–‹å§‹åœ°ç‚¹ã«é‡ãªã£ã¦ã„ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‹ã‚‰ã¯æ¥è§¦åˆ¤å®šã‚’å¾—ã‚‰ã‚Œãªã„ãŸã‚ã€‚
         return Physics.BoxCast(transform.position + Vector3.up * 0.25f, Vector3.one * halfExtents, Vector3.down, Quaternion.identity, judgeGroundedDistance);
     }
 
-    //ƒvƒŒƒCƒ„[‚ª‰æ–ÊŠO‚Éo‚é‚Ì‚ğ–h~‚·‚é
+    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒç”»é¢å¤–ã«å‡ºã‚‹ã®ã‚’é˜²æ­¢ã™ã‚‹
     private void OffScreenAndroid()
     {
         Vector3 pos = transform.position;
@@ -121,31 +110,31 @@ public class AndroidController : MonoBehaviour
         );
     }
 
-    //ƒGƒfƒBƒ^[—p‹@”\
+    //ã‚¨ãƒ‡ã‚£ã‚¿ãƒ¼ç”¨æ©Ÿèƒ½
 #if UNITY_EDITOR
     private RaycastHit rayHit;
 
-    //Ú’n”»’è‚ğƒMƒYƒ‚‚Å‰Â‹‰»BƒfƒoƒbƒO—pB
+    //æ¥åœ°åˆ¤å®šã‚’ã‚®ã‚ºãƒ¢ã§å¯è¦–åŒ–ã€‚ãƒ‡ãƒãƒƒã‚°ç”¨ã€‚
     void OnDrawGizmos()
     {
-        //BoxCast‚Å—v‹‚³‚ê‚éˆø”B‘«Œ³”»’è‚Ì‘å‚«‚³‚Ì”¼•ªB—v‹‚³‚ê‚é‚Ì‚ÍVector3Œ^‚È‚Ì‚ÅVector3.one‚ÆæZ‚µ‚Äg—p
-        //DrawWireQube‚Ìˆø”‚É‚·‚éê‡‚Í”¼•ª‚Å‚Í‚È‚­Œ³‚Ì’li1•Ó‚Ì’·‚³j‚ª•K—v‚È‚Ì‚ÅA“n‚·ƒ^ƒCƒ~ƒ“ƒO‚Å2”{‚É‚·‚éB
+        //BoxCastã§è¦æ±‚ã•ã‚Œã‚‹å¼•æ•°ã€‚è¶³å…ƒåˆ¤å®šã®å¤§ãã•ã®åŠåˆ†ã€‚è¦æ±‚ã•ã‚Œã‚‹ã®ã¯Vector3å‹ãªã®ã§Vector3.oneã¨ä¹—ç®—ã—ã¦ä½¿ç”¨
+        //DrawWireQubeã®å¼•æ•°ã«ã™ã‚‹å ´åˆã¯åŠåˆ†ã§ã¯ãªãå…ƒã®å€¤ï¼ˆ1è¾ºã®é•·ã•ï¼‰ãŒå¿…è¦ãªã®ã§ã€æ¸¡ã™ã‚¿ã‚¤ãƒŸãƒ³ã‚°ã§2å€ã«ã™ã‚‹ã€‚
         float halfExtents = contactAreaSize * 0.5f;
 
-        //^‰º‚ÉŒü‚©‚Á‚ÄBoxCast‚ğs‚¤
+        //çœŸä¸‹ã«å‘ã‹ã£ã¦BoxCastã‚’è¡Œã†
         bool isHit = Physics.BoxCast(transform.position + Vector3.up * 0.25f, Vector3.one * halfExtents, Vector3.down,out rayHit, Quaternion.identity, judgeGroundedDistance);
 
-        //ƒMƒYƒ‚•`‰æ‚Ìw¦
+        //ã‚®ã‚ºãƒ¢æç”»ã®æŒ‡ç¤º
         if (isHit)
         {
-            //Ú’n‚µ‚Ä‚¢‚é‚È‚ç’n–Ê‚Ü‚Å—Î‚ÅƒnƒR‚Æ’¼ü‚ğ
+            //æ¥åœ°ã—ã¦ã„ã‚‹ãªã‚‰åœ°é¢ã¾ã§ç·‘ã§ãƒã‚³ã¨ç›´ç·šã‚’
             Gizmos.color = Color.green;
             Gizmos.DrawRay(transform.position, Vector3.down * rayHit.distance);
             Gizmos.DrawWireCube(transform.position + Vector3.down * rayHit.distance, Vector3.one * halfExtents * 2);
         }
         else
         {
-            //Ú’n‚µ‚Ä‚¢‚È‚¯‚ê‚ÎÔ‚Å’·‚¢’¼ü‚ğ
+            //æ¥åœ°ã—ã¦ã„ãªã‘ã‚Œã°èµ¤ã§é•·ã„ç›´ç·šã‚’
             Gizmos.color = Color.red;
             Gizmos.DrawRay(transform.position, Vector3.down * 30);
         }
